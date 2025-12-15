@@ -1,0 +1,27 @@
+.contextMenu {
+    position: absolute;
+    background-color: #1e1e1e; /* Dark background */
+    border: 1px solid var(--ifm-color-primary-darker); /* Theme border */
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    z-index: 2000;
+    overflow: hidden; /* Ensure content stays within borders */
+}
+
+.contextMenu button {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #e0e0e0; /* Light text */
+    display: block;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contextMenu button:hover {
+    background-color: var(--ifm-color-primary-darker); /* Hover effect from theme */
+    color: white;
+}

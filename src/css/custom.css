@@ -1,0 +1,203 @@
+/**
+ * Any CSS you add here will be applied to all pages of your Docusaurus site.
+ */
+
+/* Global CSS Variables for New Theme */
+:root {
+  --ifm-color-primary-darkest: #002b36;
+  --ifm-color-primary-darker: #005f73;
+  --ifm-color-primary: #0a9396;
+  --ifm-color-primary-light: #2c9393;
+  --ifm-color-primary-lighter: #54b2b2;
+  --ifm-color-primary-lightest: #85d1d1;
+
+  /* Custom gradient for overall theme */
+  --custom-gradient-background: linear-gradient(135deg, var(--ifm-color-primary-darkest), var(--ifm-color-primary-darker), var(--ifm-color-primary));
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For dark mode - we'll ensure consistency with the new theme */
+[data-theme='dark'] {
+  --ifm-color-primary: var(--ifm-color-primary); /* Keep consistent */
+  --ifm-color-primary-dark: var(--ifm-color-primary-dark);
+  --ifm-color-primary-darker: var(--ifm-color-primary-darker);
+  --ifm-color-primary-darkest: var(--ifm-color-primary-darkest);
+  --ifm-color-primary-light: var(--ifm-color-primary-light);
+  --ifm-color-primary-lighter: var(--ifm-color-primary-lighter);
+  --ifm-color-primary-lightest: var(--ifm-color-primary-lightest);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background: var(--custom-gradient-background); /* Apply global gradient */
+  color: #e0e0e0; /* Light text for dark background */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #b04a4a; /* Very light headings for dark theme #f8f8f8 */ 
+}
+
+/* Custom Navbar Styles */
+.navbar {
+  min-height: var(--ifm-navbar-height);
+  height: 80px;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid transparent;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: var(--ifm-color-primary-darkest); /* Darkest part of gradient for navbar */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar--fixed-top {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Stronger shadow on scroll */
+  background-color: var(--ifm-color-primary-darker); /* Slightly lighter on scroll */
+}
+
+.navbar__item.navbar__link {
+  color: #e0e0e0; /* Light text for navbar links */
+  transition: color 0.3s ease;
+}
+
+.navbar__item.navbar__link:hover {
+  color: var(--ifm-color-primary-lightest); /* Brighter on hover */
+}
+
+.navbar__title {
+  color: white; /* Make the navbar title white */
+}
+
+.navbar__item.navbar__link::after {
+  background-color: var(--ifm-color-primary-lightest); /* Use lightest accent for underline */
+}
+
+/* Custom Sidebar Styles */
+.theme-doc-sidebar-item-category > .menu__link, /* Top-level categories */
+.menu__link { /* All other links and sublist items */
+  color: white; /* Change all sidebar links and sublist titles to white */
+}
+
+.menu__link--active {
+  color: var(--ifm-color-primary-lightest); /* Active link color */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background for active link */
+}
+
+/* Custom Footer Styles */
+.footer {
+  padding: 4rem var(--ifm-spacing-horizontal);
+  background: var(--ifm-color-primary-darkest); /* Darkest part of gradient for footer */
+  color: #ffffff;
+  --ifm-footer-link-color: #ffffff;
+  --ifm-footer-title-color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__links {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer__title {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.footer-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer__item a.footer__link-item {
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  padding: 0.2rem 0;
+}
+
+.footer__item a.footer__link-item:hover {
+  color: var(--ifm-color-primary-lightest); /* Brighter on hover */
+  transform: translateX(5px);
+  text-decoration: none;
+}
+
+.footer__copyright {
+  margin-top: 3rem;
+  line-height: 1.6;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ================================
+   REMOVE WHITE DOC CARDS
+================================ */
+
+/* Tutorial / Docs cards */
+.theme-doc-card,
+.card,
+.DocCard {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+}
+
+/* Card title */
+.theme-doc-card h2,
+.card h2,
+.DocCard h2 {
+  color: #e0f7f7 !important;
+}
+
+/* Card description text */
+.theme-doc-card p,
+.card p,
+.DocCard p {
+  color: #cceeee !important;
+}
+
+
+:not(pre) > code {
+  background: rgba(10, 147, 150, 0.25) !important;
+  color: #9ff3f3 !important;
+  border-radius: 6px;
+  padding: 2px 6px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 996px) {
+  .footer {
+    padding: 3rem var(--ifm-spacing-horizontal);
+  }
+
+  .footer__links {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer__col {
+    width: 100%;
+  }
+
+  .footer__item a.footer__link-item {
+    padding: 0.4rem 0;
+  }
+}
+
+/* Medium screens (e.g., tablets) for a 2-column layout */
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .footer__links {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+  }
+}
