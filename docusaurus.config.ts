@@ -115,11 +115,11 @@ const config = {
             items: [
               {
                 label: 'Overview',
-                to: '/docs/introduction',
+                to: '/docs/',
               },
               {
                 label: 'Modules',
-                to: '/docs/introduction', // Linking to introduction for now, as modules is a category
+                to: '/docs/', // Linking to introduction for now, as modules is a category
               },
               {
                 label: 'Tutorials',
